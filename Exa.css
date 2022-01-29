@@ -1,0 +1,147 @@
+body {
+display: flex;
+flex-direction: column;
+text-align: center;
+background-color: rgba(0, 0, 0, 0.993);
+color: red;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+padding: 1%;
+}
+
+header {/*Skapar en två kolumns-grid för sidhuvudet.*/
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    background-color: green;
+    color: black;
+    padding-bottom: 50px;
+}
+
+h1, nav {/*Lägger sidans huvudrubrik och navigationslänkar extra långt upp, med Google-fonten 'Trade Winds' som förstaval.*/
+    margin-top: 0;
+    font-family: 'Trade Winds', Arial, Helvetica;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+a {/*Skapar lite avstånd mellan länkar.*/
+    margin: 1%;
+}
+
+main {/*Formar startsidans mainsektion som en tre kolumns-grid.*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 15px;
+}
+.main {/*Skapar en klass main, som tilldelas såväl main på startsidan som motsvarande div-sektioner på de andra sidorna.*/
+    margin: 1% auto;
+    width: 80%;
+    background-color: white;
+}
+
+.rund {/*Klass för de bilder som ska avrundade.*/
+    border-radius: 50%;
+    margin-top: -50px;
+}
+
+footer {/*Sidans sidfot formas också som en tre kolumns-grid.*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1%;
+    background-color: green;
+}
+
+.Blue {/*Klass för varannan paragraf i rapporten, där text färgas blå för variation.*/
+    color: blue;
+}
+
+#Rapport a {/*Tar bort margin från länkar i rapporten, där de annars ärver margin som tilldelades länkar i sidhuvudet.*/
+    margin: 0;
+}
+
+.main p {
+    padding: 1%;
+}
+
+li {
+    padding: 10px 0;
+}
+
+/*Media query för tablets och stora telefoner*/
+@media screen and (max-width: 992px) {
+    header, main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding-bottom: 50px;
+    }
+
+    #left, #profil  {
+        margin: 100px;
+    }
+
+    #Profil {/*div-sektion för bild i mitten i desktop-läge, som inte visas på små skärmar.*/
+        display: none;
+    }
+
+    #Foto {/*Tilldelar stor bild på sida två en procentuell storlek när skärmstorlek är 992 px eller mindre.*/
+        width: 100%;
+    }
+
+    ul {/*Bryter ord när de är tillräckligt stora för att annars tränga utanför behållaren. De avbrytna bokstäverna hamnar nu en rad ner istället.*/
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding: 1%;
+    }
+}
+
+/*Media query för små telefoner*/
+@media screen and (max-width: 600px) {
+img:hover {/*Förstorar bilder när pekare eller mus ligger över dem en och en halv sekund. */
+    transition-delay: 1.5s;
+    transform: scale(1.5);
+}
+}
+
+@media screen and (min-width: 992.5px)  {
+    #Mobil {/*Kopia av div-sektion i mitten av main, som ej visas på stora skärmar (där originalet istället syns).Sätter till 992.5 px istället för 992 px, då vid den precisa brytpunkten (992 px) varken den här eller den likadana bilden syntes.*/
+        display: none;
+    }
+}
+
+@media print {
+
+    body, .Blue {/*Markerar att vit bakgrund, svart textfärg och ganska liten textstorlek tillfogas utskrifter.*/
+        color:black;
+        background-color: white;
+        font-size: 11pt; 
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    header {/*Ändrar sidhuvudet vid utskrift av estetiska skäl, då navigationsfältet försvinner.*/
+        display: flex;
+        flex-direction: column;
+        line-height: 15px;
+    }
+
+    #Rapport {/*Breder ut rapporten vid utskrift, där denna del av varje sida annars är smalare än sidhuvud och sidfot.*/
+        width: 100%;
+    }
+
+   #Kall {/*Tilldelar källförteckningen extra margin i toppen, så att den ej bryts på två sidor och hela förteckningen hamnar på en egen sida.*/
+       margin-top: 200px;
+   }
+    
+    nav, #Mobil, #Foto, #klassfoto {/*Markerar att navigationslänkar, kopia av den mittliggande div-sektionen på startsidan, den stora bilden och dess tillhörande beskrivande text inte ska synas på en utskrift.*/
+        display:none;
+    }
+}

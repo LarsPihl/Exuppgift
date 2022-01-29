@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lars Pihl</title>
+    <link href="Exa.css" rel="stylesheet" type="text/css"><!--Länk till webbsidans CSS-fil.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><!--Länkar in Trade Winds från Google Fonts.-->
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header><!--Sidhuvud för webbsidan.-->
+
+        <h1>
+            Lars Pihl
+        </h1>
+    
+        <nav><!--Sektion för navigationslänkar till alla webbplatsens sidor.-->
+            <a href="Index.html">Om mig</a>
+            <a href="Sida2.html">Mina tjänster</a>
+            <a href="Rapport.html">Rapport</a>
+        </nav>
+    
+        <p><!--Paragraf med introduktion till mig.-->
+            Jag heter Lars Pihl och gillar musik, film och sport. Min smak inom musik omfattar såväl Jazz som 
+            Rock, Metal, Prog m.m. Till favoritsporterna hör ishockey och fotboll, medan det bästa för mig inom film avtäcks inom stilarna Action, Thriller och skräck.
+            
+        </p>
+    
+        <p>
+            Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.
+        </p>
+    
+        </header>
+
+    <div class="main" id="Rapport"><!--div-sektion som tilldelas klassen main och även ett eget id för att vid utskrift använda mer bredd än vad som tilldelas i övriga fall.-->
+
+        <p>
+            Till att börja med så hade jag lite förkunskaper inom HTML och CSS som föregick denna kurs, vilket ledde till att tidigare erfarenheter delvis influerade en del av designen på min webbsida <a href="https://thirsty-allen-dd38f0.netlify.app/" target="_blank">(se Bertssons skivbutik</a>, 2021). 
+        </p>
+
+        <p class="Blue">
+            Som mall för startsidan valde jag den desktop-mall som ingick i den tilldelade mockupen.
+            Bakgrunden sattes till svart, sidhuvud och sidfot gröna och "main" färgades vit.
+            Den valda svarta bakgrunden (rgba(0, 0, 0, 0.993)) skiljer sig något från övrig svart färg som används, då CSS-kompilatorn varnade mig om att samma färg används som bakgrund och textfärg i sidhuvudet. Detta gör egentligen inte så mycket, men jag valde att marginellt ändra färg på grund av detta.
+            Stilmässigt valde jag "desktop-first" framför "mobile-first", då jag föredrar att skala ned
+            en större design än att tvärtemot förstora en ursprungligen liten sådan. Dessutom är det på detta sätt jag tidigare lärt mig designa sidor på webben, så detta val blev ganska självklart.
+            Nackdelen med detta val blir att sidorna kan visas långsammare på små skärmar än de hade
+            gjort vid "mobile-first", varav åsikter om vilken stil man ska välja skiljer sig åt.
+        </p>
+
+        <p>
+            Vad gäller kodning av CSS stod valet mellan "inline-stil", en intern stilmall eller en extern stilmall. Eftersom sidorna ska ha en någorlunda liknade design så var valet av en extern stilmall för mig självklart.  Förutom att göra koden tydligare att läsa sparas tid när relaterade sidor på webbplatsen laddas, då CSS-filen laddas ned en gång vid öppning av den första sidan och sparas i aktuellt cacheminne. Därefter laddas nästkommande sidor fortare än de hade gjort om de förutom HTML hade varit fyllda med CSS-kod.
+            För val av storlek på media queries utgick jag från rekommendationer givna av W3schools (<a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target ="_blank">W3Schools</a>).
+        </p>
+
+        <p class="Blue">
+            Också av erfarenhetsskäl samt preferns av flöde på webbplatsen formaterade jag dess sidor med "display: flex" med "flex-direction: column" för att sedan dela in dem i olika olika sektioner med "display: grid" bestående av olika antal kolumner efter behov. Innehållet centrerades och en lätt "padding" på en procent tilldelades av designskäl, då delarna innan detta såg lite ihoptrycka ut.
+        </p>
+
+        <p>
+            Vid tidigare tillfällen har jag använt sektioner av "header", "article", "aside" och "footer", men efter att i denna kursen haft "main" istället för "article" gjorde jag likadant här.
+            För design av header valde jag en "grid-layout" bestående av två jämna kolumner via "grid-template-columns: auto auto". Då det till en början såg lite ihoptryckt ut lade jag till en
+            "column-gap" på 10 px. I de flesta fall använde jag procent istället för pixlar vid design av webbsidan. Men till exempel i detta fall var den valda storleken på avståndet mellan kolumnerna tillfredställande även när skärmen minskades något och ändrades ej, eftersom "display: grid" ersätts av "display: flex" när storleken på skärmen är 992 px eller mindre. Därav 
+            uppstår det aldrig en situation där kolumnerna minskat rejält, men avståndet mellan dem 
+            fortfarande är i full storlek. Ifall "grid-designen" hade stått kvar även för små skärmar 
+            hade jag valt en passande "column-gap" i procent istället.
+
+        <p class="Blue">
+            Ett alternativ till "grid-layouten" i sidhuvudet hade varit att använda "display: float" istället, något som jag inte använt innan denna kursens början. Fördel med detta hade varit 
+            att det eventuellt funkat bättre för mycket gamla webbläsare, som i vissa fall inte klarar av "grid" då det är ett nyare sätt att skapa layouts. Trots detta valde jag bort "float", då det enligt mig fungerar smidigare med nämnda "grid-layout" och jag dessutom utgick ifrån att nästan alla webbläsare nu klarar av detta (till exempel kodades hela denna webbsidan i en 32 bit-dator från 2003 med Windows 7, som inte har några som helst problem med "grid").
+        </p>
+
+        <p class="Bytsida">
+            I den översta raden placerade jag en huvudrubrik innehållande mitt namn samt en sektion med "nav" för sidans navigeringslänkar. Dessa placerades längst upp med fonten <a href="https://fonts.google.com/specimen/Trade+Winds" target="_blank">"Trade Winds"</a> från Googlefonts som första val, då nämnda textstil användes i en tidigare checkpoint i denna kursen och föreföll sig vara mycket snygg. För att denna del av webbplatsen skulle stå ut i texten förblev detta den enda instansen som denna font användes på varje sida. Då nämnda desktop-mall under detta också hade två sektioner delades nästa rad
+            också in i två kolumner bestående av varsin paragraf innehållande text från <a href="http://www.zombieipsum.com/#" target="_blank">ZombieIpsum.com</a>.
+        </p>
+
+        <p class="Blue">
+            Startsidans "main-sektion" skiljer sig åt från de andra två sidorna, i och med att den delades
+            upp med "display: grid" bestående av tre kolumner, medan de andra ärver "flex" från "body". Även här hade "display: float" varit ett fullgott alternativ. Innan dessa tre kolumner med bilder (tagna från <a href="https://www.facebook.com/lars.pihl.96/" target="_blank">min facebook</a>, 2021) finns en kopia av mittkolumnen, som ej syns förren bildstorken är 992 px eller mindre (via "display: none"). Precis som med sidans sidhuvud upphör vid nämnda skärmstorlek "grid-layouten" och ersätts av "display: flex", varav den tidigare osynliga kolumnen blir synlig för att hamna ovanför de andra (den andra likadana kolumnen, som låg i mitten i "grid-layouten", blir nu osynlig istället). 
+        </p>
+
+        <p>
+            För att några gemenskapa egenskaper på varje sidas motsvarande "main-sektion" skulle tillfogas tilldelades såvål startsidans "main" som de liknande "div-sektionerna" på de andra sidorna klassen "main", där de gemensamma egenskaperna ingår. Startsidans särskilda egenskaper vad gäller denna del tillfördes istället den allmänna sektionen "main" och alltså inte klassen med samma namn i CSS-filen.
+            Gällande webbplatsens rapport har varannan paragraf tilldelats klassen "Blue", som ger blå textfärg för att ge kontrast mot den i övrigt röda texten.
+        </p>
+
+        <p class="Blue">
+            Sidfoten har ett liknade upplägg som startsidans "main-sektion", med en "grid-layout" bestående av tre kolumner. Till skillnad från de andra "grid-sektionerna" består denna del även vid små skärmupplösningar (dock i förminskad form), varav "column-gap" tilldelas procentuellt.
+        </p>
+
+        <p>
+            Sida två och tre är snarlika förutom att en stor bild på ett gammalt klassfoto (också tagen från min facebook) lades till på sida två, med huvudsyfte att den sedan ska tas bort vid utskrift.
+            En liten beskrivande text om bilden placerades i ett "span-element", med tanke att det inte heller ska synas vid en utskrift, eftersom bilden då saknas och texten alltså blir överflödig.
+        </p>
+
+        <p class="Blue">
+            För mycket små skärmar (600 px och mindre) förstoras bilder tillfälligt med femtio procent (<a href="https://www.w3schools.com/howto/howto_css_zoom_hover.asp" target="_blank">W3Schools</a>) när en mus eller pekare hålls över dem i en och en halv sekund (<a href = "https://www.w3schools.com/css/css3_transitions.asp" target="_blank">W3Schools</a>, 2021). För listan med referenslänkar lades "overflow-wrap: break-word;" (se <a href="https://stackoverflow.com/questions/39109539/break-long-words-on-small-screens" target="blank">Stackoverflow.com</a>, 2016) till vid skärmupplösning 992 px eller mindre, då några av dessa långa länkar i annat fall låg utanför den vita "div-sektioner" de tillhör, vilket inte hade varit snyggt även om det fortfarande hade synts i skärmen. Den organiserade listans punkter däremot hamnar strax utanför behållaren i små skärmar, detta lät jag dock vara då det fortfarande såg bra ut och kommer synas i alla skärmar.
+            En lätt padding lades också till i rapporten för att bokstäver ej skulle trycka mot kanterna av behållaren.
+        </p>
+
+        <p>
+            CSS-kod för utskrift kunde alternativt länkats in via ett nytt CSS-dokument, men jag valde att lägga till lämplig kod längst ned i det CSS-dokument som redan tillfogats HTML-sidorna. Förutom att gå fort och vara smidigt kan detta eventuellt spara tid, då det rimligen går snabbare att ladda ett dokument med CSS än två.
+            För att spara färgpatroner sattes vid utskrift textfärg till svart och bakgrundsfärg till vit. Det sistnämnda är eventuellt överflödigt, då en skrivare brukar ändra till vit bakgrund automatiskt. Dock lade jag till detta för säkerhets skull. 
+            Även den stora bilden på sida två tas bort vid utskrift av samma skäl (samt tillhörande text).
+            I sidhuvudet tas navigationsfältet bort och innehållet formas om med "display: flex" av estetiska skäl. För att spara plats på pappret minskas också textstorlek till elva pt.
+            Extra margin lades till ovanför rubriken för referenslistan, så att hela förteckningen hamnade på en egen sida istället. På detta sätt undvaras eventuella problem med stöd för page break i olika webbläsare.
+            All information om utskrifter hittades på <a href="https://webdesignskolan.se/css_utskrift/css_utskrift.php" target="_blank">Webbdesignskolan.se.</a>
+        </p>
+
+        <h2 id="Kall">Källförteckning</h2>
+
+        <ul>
+            <li>Bertssons skivbutik.2021.<i>Bertssons skivbutik</i> <br>
+                <a href="https://thirsty-allen-dd38f0.netlify.app/" target="_blank">https://thirsty-allen-dd38f0.netlify.app/</a> (Hämtad 2021-09-12).</li>
+
+            <li>W3Schools. <i>CSS Media Queries - Examples</i> <br>
+                <a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp" target="_blank">https://www.w3schools.com/css/css3_mediaqueries_ex.asp</a> (Hämtad 2021-09-12).</li>
+
+            <li>Google Fonts. <i>Trade Winds - Google Fonts</i> <br>
+                <a href="https://fonts.google.com/specimen/Trade+Winds" target="_blank">https://fonts.google.com/specimen/Trade+Winds</a> (Hämtad 2021-09-12).</li>
+
+            <li>Zombie Ipsum. <i>Zombie Ipsum: Frightful Filler for Your Damned Designs</i> <br>
+                <a href="http://www.zombieipsum.com/#" target="_blank">http://www.zombieipsum.com/#</a> (Hämtad 2021-09-12).</li>
+
+            <li>Facebook. 2021. <i>Lars Pihl | Facebook</i> <br>
+                <a href="https://www.facebook.com/lars.pihl.96/" target="_blank">https://www.facebook.com/lars.pihl.96/</a> (Hämtad 2021-09-12).</li>
+
+            <li>W3Schools. <i>How TO - Zoom on Hover</i> <br>
+                <a href="https://www.w3schools.com/howto/howto_css_zoom_hover.asp" target="_blank">https://www.w3schools.com/howto/howto_css_zoom_hover.asp</a> (Hämtad 2021-09-12).</li>
+
+            <li>W3Schools. <i>CSS Transitions</i> <br>
+                <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">https://www.w3schools.com/css/css3_transitions.asp</a> (Hämtad 2021-09-12).</li>
+
+            <li>Stackoverflow. 2016. <i>php - Break long words on small screens - Stack Overflow</i> <br>
+                <a href="https://stackoverflow.com/questions/39109539/break-long-words-on-small-screens" target="_blank">https://stackoverflow.com/questions/39109539/break-long-words-on-small-screens</a> (Hämtad 2021-09-12).</li>
+
+            <li>Webbdesignskolan. Webdesignskolan, <i>CSS för utskrifter (media="print")</i> <br>
+                <a href="https://webdesignskolan.se/css_utskrift/css_utskrift.php" target="_blank">https://webdesignskolan.se/css_utskrift/css_utskrift.php</a> (Hämtad 2021-09-12).</li>
+        </ul>
+
+    </div>
+
+    <footer><!--Sidans sidfot med kontaktuppgifter.-->
+        <div>
+            <h2>Adress</h2>
+            <p>Uddehomlsgatan 14 <br> 41675 Göteborg</p>
+        </div>
+
+        <div>
+            <h2>Telefon</h2> 
+            <p>0705623530
+        </div>
+
+        <div>
+            <h2>E-post</h2>
+            <p>Lars.Pihl.91@Hotmail.com <br> lars.pihl@student.hv.se</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
